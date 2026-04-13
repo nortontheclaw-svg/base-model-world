@@ -1,15 +1,13 @@
-// Car data — captions from vault
+/* ============================================================
+   BASE MODEL WORLD — main.js
+   - Scroll-triggered reveal animations
+   - Lightbox with prev/next navigation
+   - Hero image load animation
+   - Smooth scroll
+   ============================================================ */
+
+// ---- CAR DATA ----
 const carData = {
-  mclaren: {
-    name: 'McLaren P1',
-    caption: 'Not the loudest. Not the fastest. But the one that makes you question what you\'re actually looking at.',
-    images: [
-      'img/mclaren-p1-hero.png',
-      'img/mclaren-p1-alt-1.png',
-      'img/mclaren-p1-alt-2.png',
-      'img/mclaren-p1-alt-3.png',
-    ]
-  },
   ferrari: {
     name: 'Ferrari 360 Modena',
     caption: 'The Ferrari 360 Modena doesn\'t perform. It has a 3.6 V8, a manual box, and nothing to prove. Modern Ferrari is extraordinary. Also exhausting. This exists because basic still beats complicated.',
@@ -29,6 +27,16 @@ const carData = {
       'img/porsche-911-alt-3.png',
     ]
   },
+  mclaren: {
+    name: 'McLaren P1',
+    caption: 'Not the loudest. Not the fastest. But the one that makes you question what you\'re actually looking at.',
+    images: [
+      'img/mclaren-p1-hero.png',
+      'img/mclaren-p1-alt-1.png',
+      'img/mclaren-p1-alt-2.png',
+      'img/mclaren-p1-alt-3.png',
+    ]
+  },
   bentley: {
     name: 'Bentley Flying Spur',
     caption: 'A saloon that refuses to be ordinary. The Flying Spur proves that restraint is its own form of ambition.',
@@ -41,16 +49,47 @@ const carData = {
   }
 };
 
-// Lightbox state
+// ---- SCROLL REVEAL ----
+function initReveal() {
+  const items = document.querySelectorAll('.reveal-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  items.forEach(item => observer.observe(item));
+}
+
+// ---- HERO IMAGE LOAD ----
+function initHero() {
+  const heroImg = document.getElementById('hero-img');
+  if (!heroImg) return;
+
+  if (heroImg.complete) {
+    heroImg.classList.add('loaded');
+  } else {
+    heroImg.addEventListener('load', () => heroImg.classList.add('loaded'));
+  }
+}
+
+// ---- LIGHTBOX ----
 let currentCar = null;
 let currentIndex = 0;
 
 const lightbox = document.getElementById('lightbox');
 const lbHero = document.getElementById('lb-hero');
+const lbTitle = document.getElementById('lb-title');
 const lbThumbs = document.getElementById('lb-thumbs');
 const lbCaption = document.getElementById('lb-caption');
 
-// Open lightbox
 function openLightbox(carKey, index) {
   currentCar = carData[carKey];
   currentIndex = index;
@@ -60,26 +99,27 @@ function openLightbox(carKey, index) {
   document.body.style.overflow = 'hidden';
 }
 
-// Close lightbox
 function closeLightbox() {
   lightbox.classList.remove('active');
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  setTimeout(() => {
+    lbHero.src = '';
+    lbThumbs.innerHTML = '';
+  }, 400);
 }
 
-// Render lightbox content
 function renderLightbox() {
   lbHero.src = currentCar.images[currentIndex];
   lbHero.alt = currentCar.name;
-
+  lbTitle.textContent = currentCar.name;
   lbCaption.textContent = currentCar.caption;
 
-  // Build thumbs
   lbThumbs.innerHTML = '';
   currentCar.images.forEach((src, i) => {
     const img = document.createElement('img');
     img.src = src;
-    img.alt = `${currentCar.name} angle ${i + 1}`;
+    img.alt = `${currentCar.name} — ${i + 1}`;
     if (i === currentIndex) img.classList.add('active');
     img.addEventListener('click', () => {
       currentIndex = i;
@@ -87,9 +127,12 @@ function renderLightbox() {
     });
     lbThumbs.appendChild(img);
   });
+
+  // Scroll active thumb into view
+  const active = lbThumbs.querySelector('.active');
+  if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
-// Navigate
 function lbNext() {
   currentIndex = (currentIndex + 1) % currentCar.images.length;
   renderLightbox();
@@ -100,34 +143,58 @@ function lbPrev() {
   renderLightbox();
 }
 
-// Event listeners
-document.querySelectorAll('.car-card').forEach(card => {
-  card.addEventListener('click', () => {
+// ---- INIT ----
+document.addEventListener('DOMContentLoaded', () => {
+  initReveal();
+  initHero();
+
+  // Car cards
+  document.querySelectorAll('.car-card').forEach(card => {
     const carKey = card.dataset.car;
-    if (carData[carKey]) openLightbox(carKey, 0);
+    if (!carData[carKey]) return;
+
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+
+    card.addEventListener('click', () => openLightbox(carKey, 0));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(carKey, 0);
+      }
+    });
   });
-  card.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      const carKey = card.dataset.car;
-      if (carData[carKey]) openLightbox(carKey, 0);
-    }
+
+  // Lightbox controls
+  document.querySelector('.lb-close').addEventListener('click', closeLightbox);
+  document.querySelector('.lb-next').addEventListener('click', lbNext);
+  document.querySelector('.lb-prev').addEventListener('click', lbPrev);
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
   });
-  card.setAttribute('tabindex', '0');
-  card.setAttribute('role', 'button');
-});
 
-document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-document.querySelector('.lightbox-next').addEventListener('click', lbNext);
-document.querySelector('.lightbox-prev').addEventListener('click', lbPrev);
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowRight') lbNext();
+    if (e.key === 'ArrowLeft')  lbPrev();
+  });
 
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) closeLightbox();
-});
+  // Nav active link — highlight based on scroll position
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
-document.addEventListener('keydown', e => {
-  if (!lightbox.classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') lbNext();
-  if (e.key === 'ArrowLeft') lbPrev();
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active',
+            link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(section => navObserver.observe(section));
 });

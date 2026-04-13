@@ -7,85 +7,129 @@
   <meta name="description" content="White over steel. AI-assisted automotive photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav id="nav">
     <div class="nav-inner">
-      <span class="nav-logo">Base Model World</span>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" class="nav-wordmark">Base Model World</a>
+      <div class="nav-right">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener" class="nav-link nav-ig">@base.model.world</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="img/mclaren-p1-hero.png" alt="McLaren P1" loading="eager">
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="img/mclaren-p1-hero.png" alt="McLaren P1" id="hero-img">
     </div>
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1 class="hero-title">Base Model World</h1>
-        <p class="hero-tagline">White over steel.<br>No distraction. No compromise.</p>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-item">Photography</div>
+      <h1 class="hero-title">
+        <span class="hero-title-line reveal-item">White</span>
+        <span class="hero-title-line reveal-item">over</span>
+        <span class="hero-title-line reveal-item hero-title-italic">steel.</span>
+      </h1>
+      <p class="hero-sub reveal-item">AI-assisted automotive photography.<br>No filter. No location. No alloy.</p>
+      <div class="hero-scroll reveal-item">
+        <span class="hero-scroll-line"></span>
+        <span class="hero-scroll-text">Scroll</span>
       </div>
+    </div>
+    <div class="hero-index">
+      <span class="hero-index-num">01</span>
+      <span class="hero-index-label">McLaren P1</span>
     </div>
   </section>
 
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="section-header">
-      <span class="section-label">Selected Work</span>
+  <!-- WORK INTRO -->
+  <section class="work-intro" id="work">
+    <div class="work-intro-inner">
+      <div class="section-label reveal-item">Selected Work</div>
+      <h2 class="work-intro-heading reveal-item">The collection.<br><em>Four cars. One standard.</em></h2>
     </div>
+  </section>
 
+  <!-- CAR GRID -->
+  <section class="car-section">
     <div class="car-grid">
 
-      <!-- McLaren P1 -->
-      <div class="car-card" data-car="mclaren">
-        <div class="car-card-image">
-          <img src="img/mclaren-p1-hero.png" alt="McLaren P1" loading="lazy">
-        </div>
-        <div class="car-card-info">
-          <h3 class="car-name">McLaren P1</h3>
-          <p class="car-sub">Hybrid Hypercar</p>
-        </div>
-      </div>
-
-      <!-- Ferrari 360 -->
-      <div class="car-card" data-car="ferrari">
-        <div class="car-card-image">
+      <!-- Ferrari 360 — large, left -->
+      <div class="car-card car-card--large reveal-item" data-car="ferrari">
+        <div class="car-card-media">
           <img src="img/ferrari-360-front.png" alt="Ferrari 360 Modena" loading="lazy">
         </div>
-        <div class="car-card-info">
-          <h3 class="car-name">Ferrari 360 Modena</h3>
-          <p class="car-sub">3.6 V8 · Manual</p>
+        <div class="car-card-body">
+          <div class="car-card-index">01</div>
+          <div class="car-card-name">Ferrari 360 Modena</div>
+          <div class="car-card-spec">3.6 V8 · Manual</div>
+          <div class="car-card-cta">
+            <span>View</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
 
-      <!-- Porsche 911 -->
-      <div class="car-card" data-car="porsche">
-        <div class="car-card-image">
+      <!-- Porsche 911 — right top -->
+      <div class="car-card reveal-item" data-car="porsche">
+        <div class="car-card-media">
           <img src="img/porsche-911-hero.png" alt="Porsche 911 Carrera" loading="lazy">
         </div>
-        <div class="car-card-info">
-          <h3 class="car-name">Porsche 911 Carrera</h3>
-          <p class="car-sub">Carrera. Nothing else.</p>
+        <div class="car-card-body">
+          <div class="car-card-index">02</div>
+          <div class="car-card-name">Porsche 911 Carrera</div>
+          <div class="car-card-spec">Carrera. Nothing else.</div>
+          <div class="car-card-cta">
+            <span>View</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
 
-      <!-- Bentley -->
-      <div class="car-card" data-car="bentley">
-        <div class="car-card-image">
+      <!-- McLaren P1 — right bottom -->
+      <div class="car-card reveal-item" data-car="mclaren">
+        <div class="car-card-media">
+          <img src="img/mclaren-p1-alt-1.png" alt="McLaren P1" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-card-index">03</div>
+          <div class="car-card-name">McLaren P1</div>
+          <div class="car-card-spec">Hybrid Hypercar</div>
+          <div class="car-card-cta">
+            <span>View</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bentley — full width -->
+      <div class="car-card car-card--wide reveal-item" data-car="bentley">
+        <div class="car-card-media">
           <img src="img/bentley-flying-spur-hero.png" alt="Bentley Flying Spur" loading="lazy">
         </div>
-        <div class="car-card-info">
-          <h3 class="car-name">Bentley Flying Spur</h3>
-          <p class="car-sub">Restraint as ambition</p>
+        <div class="car-card-body">
+          <div class="car-card-index">04</div>
+          <div class="car-card-name">Bentley Flying Spur</div>
+          <div class="car-card-spec">Restraint as ambition</div>
+          <div class="car-card-cta">
+            <span>View</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -95,40 +139,90 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-inner">
-      <div class="section-header">
-        <span class="section-label">About</span>
+      <div class="about-left reveal-item">
+        <div class="section-label">About</div>
+        <div class="about-rule"></div>
       </div>
-      <div class="about-text">
-        <p>Base Model World is a car photography project built around a simple conviction: the best way to see a car is without distraction.</p>
-        <p>Each image begins as a 3/4-front hero shot generated with AI, then developed into three angles — dead side, dead front, rear 3/4 — using Figma Weave. The result is a consistent studio look: white infinity cove, pressed steel wheels, black bumper sections. No location. No filter. No alloy.</p>
-        <p class="about-last">The aesthetic is deliberate. White over steel.</p>
+      <div class="about-right">
+        <p class="about-lead reveal-item">Base Model World is a car photography project built around a simple conviction: <strong>the best way to see a car is without distraction.</strong></p>
+        <div class="about-divider reveal-item"></div>
+        <div class="about-body">
+          <p class="reveal-item">Each image begins as a 3/4-front hero shot generated with AI, then developed into three angles — dead side, dead front, rear 3/4 — using Figma Weave.</p>
+          <p class="reveal-item">The result is a consistent studio look: white infinity cove, pressed steel wheels, black bumper sections. No location. No filter. No alloy.</p>
+          <p class="about-last reveal-item">The aesthetic is deliberate. <em>White over steel.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STRIP -->
+  <section class="process">
+    <div class="process-inner">
+      <div class="process-step reveal-item">
+        <div class="process-num">01</div>
+        <div class="process-name">Gemini</div>
+        <div class="process-desc">3/4-front hero shot. Specific livery. Black bumpers. Steel wheels.</div>
+      </div>
+      <div class="process-arrow reveal-item">→</div>
+      <div class="process-step reveal-item">
+        <div class="process-num">02</div>
+        <div class="process-name">Figma Weave</div>
+        <div class="process-desc">Three angles iterated from the hero. Dead side. Dead front. Rear 3/4.</div>
+      </div>
+      <div class="process-arrow reveal-item">→</div>
+      <div class="process-step reveal-item">
+        <div class="process-num">03</div>
+        <div class="process-name">Output</div>
+        <div class="process-desc">Studio-quality image, every time. White over steel.</div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">Base Model World</span>
-      <div class="footer-links">
-        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">@base.model.world</a>
+      <div class="footer-top">
+        <div class="footer-wordmark reveal-item">Base Model World</div>
+        <div class="footer-social reveal-item">
+          <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
+          <span class="footer-dot"></span>
+          <a href="https://github.com/nortontheclaw-svg/base-model-world" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
-      <p class="footer-copy">&copy; 2026 Base Model World. All rights reserved.</p>
+      <div class="footer-bottom reveal-item">
+        <p class="footer-copy">&copy; 2026 Base Model World. Photography and art direction.</p>
+        <p class="footer-tagline">White over steel.</p>
+      </div>
     </div>
   </footer>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <div class="lightbox-content">
-      <div class="lightbox-hero">
+    <button class="lb-close" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="lb-content">
+      <div class="lb-hero">
         <img id="lb-hero" src="" alt="">
       </div>
-      <div class="lightbox-thumbs" id="lb-thumbs"></div>
-      <div class="lightbox-caption" id="lb-caption"></div>
+      <div class="lb-meta">
+        <div class="lb-title" id="lb-title"></div>
+        <div class="lb-thumbs" id="lb-thumbs"></div>
+        <div class="lb-caption" id="lb-caption"></div>
+      </div>
     </div>
-    <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
-    <button class="lightbox-next" aria-label="Next">&#10095;</button>
+    <button class="lb-nav lb-prev" aria-label="Previous">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="lb-nav lb-next" aria-label="Next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </div>
 
   <script src="js/main.js"></script>
