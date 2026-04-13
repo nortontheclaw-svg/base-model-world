@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base Model World</title>
+  <title>White Over Steel</title>
   <meta name="description" content="White over steel. AI-assisted automotive photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-wordmark">Base Model World</a>
+      <a href="#" class="nav-wordmark">White Over Steel</a>
       <div class="nav-right">
         <a href="#work" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
@@ -31,21 +31,17 @@
     </div>
     <div class="hero-vignette"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow reveal-item">Photography</div>
+      <div class="hero-label reveal-item">Photography</div>
       <h1 class="hero-title">
         <span class="hero-title-line reveal-item">White</span>
-        <span class="hero-title-line reveal-item">over</span>
-        <span class="hero-title-line reveal-item hero-title-italic">steel.</span>
+        <span class="hero-title-line reveal-item">Over</span>
+        <span class="hero-title-line reveal-item hero-title-bold">Steel.</span>
       </h1>
       <p class="hero-sub reveal-item">AI-assisted automotive photography.<br>No filter. No location. No alloy.</p>
-      <div class="hero-scroll reveal-item">
-        <span class="hero-scroll-line"></span>
-        <span class="hero-scroll-text">Scroll</span>
-      </div>
     </div>
-    <div class="hero-index">
-      <span class="hero-index-num">01</span>
-      <span class="hero-index-label">McLaren P1</span>
+    <div class="hero-scroll-hint reveal-item">
+      <div class="scroll-dot"></div>
+      <span>Scroll</span>
     </div>
   </section>
 
@@ -53,7 +49,7 @@
   <section class="work-intro" id="work">
     <div class="work-intro-inner">
       <div class="section-label reveal-item">Selected Work</div>
-      <h2 class="work-intro-heading reveal-item">The collection.<br><em>Four cars. One standard.</em></h2>
+      <h2 class="work-intro-heading reveal-item">The cars.<br>Nothing else.</h2>
     </div>
   </section>
 
@@ -61,55 +57,67 @@
   <section class="car-section">
     <div class="car-grid">
 
-      <!-- Ferrari 360 — large, left -->
+      <!-- Ferrari — large left -->
       <div class="car-card car-card--large reveal-item" data-car="ferrari">
         <div class="car-card-media">
           <img src="img/ferrari-360-front.png" alt="Ferrari 360 Modena" loading="lazy">
+          <div class="car-card-overlay">
+            <span class="car-card-overlay-text">View</span>
+          </div>
         </div>
         <div class="car-card-body">
           <div class="car-card-index">01</div>
-          <div class="car-card-name">Ferrari 360 Modena</div>
-          <div class="car-card-spec">3.6 V8 · Manual</div>
-          <div class="car-card-cta">
-            <span>View</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="car-card-info">
+            <div class="car-card-name">Ferrari 360 Modena</div>
+            <div class="car-card-spec">3.6 V8 · Manual</div>
+          </div>
+          <div class="car-card-arrow">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
         </div>
       </div>
 
-      <!-- Porsche 911 — right top -->
+      <!-- Porsche -->
       <div class="car-card reveal-item" data-car="porsche">
         <div class="car-card-media">
           <img src="img/porsche-911-hero.png" alt="Porsche 911 Carrera" loading="lazy">
+          <div class="car-card-overlay">
+            <span class="car-card-overlay-text">View</span>
+          </div>
         </div>
         <div class="car-card-body">
           <div class="car-card-index">02</div>
-          <div class="car-card-name">Porsche 911 Carrera</div>
-          <div class="car-card-spec">Carrera. Nothing else.</div>
-          <div class="car-card-cta">
-            <span>View</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="car-card-info">
+            <div class="car-card-name">Porsche 911 Carrera</div>
+            <div class="car-card-spec">Carrera. Nothing else.</div>
+          </div>
+          <div class="car-card-arrow">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
         </div>
       </div>
 
-      <!-- McLaren P1 — right bottom -->
+      <!-- McLaren -->
       <div class="car-card reveal-item" data-car="mclaren">
         <div class="car-card-media">
           <img src="img/mclaren-p1-alt-1.png" alt="McLaren P1" loading="lazy">
+          <div class="car-card-overlay">
+            <span class="car-card-overlay-text">View</span>
+          </div>
         </div>
         <div class="car-card-body">
           <div class="car-card-index">03</div>
-          <div class="car-card-name">McLaren P1</div>
-          <div class="car-card-spec">Hybrid Hypercar</div>
-          <div class="car-card-cta">
-            <span>View</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="car-card-info">
+            <div class="car-card-name">McLaren P1</div>
+            <div class="car-card-spec">Hybrid Hypercar</div>
+          </div>
+          <div class="car-card-arrow">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
         </div>
@@ -119,15 +127,19 @@
       <div class="car-card car-card--wide reveal-item" data-car="bentley">
         <div class="car-card-media">
           <img src="img/bentley-flying-spur-hero.png" alt="Bentley Flying Spur" loading="lazy">
+          <div class="car-card-overlay">
+            <span class="car-card-overlay-text">View</span>
+          </div>
         </div>
         <div class="car-card-body">
           <div class="car-card-index">04</div>
-          <div class="car-card-name">Bentley Flying Spur</div>
-          <div class="car-card-spec">Restraint as ambition</div>
-          <div class="car-card-cta">
-            <span>View</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="car-card-info">
+            <div class="car-card-name">Bentley Flying Spur</div>
+            <div class="car-card-spec">Restraint as ambition</div>
+          </div>
+          <div class="car-card-arrow">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
         </div>
@@ -144,36 +156,44 @@
         <div class="about-rule"></div>
       </div>
       <div class="about-right">
-        <p class="about-lead reveal-item">Base Model World is a car photography project built around a simple conviction: <strong>the best way to see a car is without distraction.</strong></p>
+        <p class="about-lead reveal-item">White Over Steel is a car photography project built around one idea: <strong>the best way to see a car is without distraction.</strong></p>
         <div class="about-divider reveal-item"></div>
         <div class="about-body">
           <p class="reveal-item">Each image begins as a 3/4-front hero shot generated with AI, then developed into three angles — dead side, dead front, rear 3/4 — using Figma Weave.</p>
           <p class="reveal-item">The result is a consistent studio look: white infinity cove, pressed steel wheels, black bumper sections. No location. No filter. No alloy.</p>
-          <p class="about-last reveal-item">The aesthetic is deliberate. <em>White over steel.</em></p>
+          <p class="about-last reveal-item">The aesthetic is deliberate. <strong>White over steel.</strong></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS STRIP -->
+  <!-- PROCESS -->
   <section class="process">
     <div class="process-inner">
       <div class="process-step reveal-item">
         <div class="process-num">01</div>
         <div class="process-name">Gemini</div>
-        <div class="process-desc">3/4-front hero shot. Specific livery. Black bumpers. Steel wheels.</div>
+        <div class="process-desc">3/4-front hero shot. Black bumpers. Steel wheels.</div>
       </div>
-      <div class="process-arrow reveal-item">→</div>
+      <div class="process-arrow reveal-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h14M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <div class="process-step reveal-item">
         <div class="process-num">02</div>
         <div class="process-name">Figma Weave</div>
-        <div class="process-desc">Three angles iterated from the hero. Dead side. Dead front. Rear 3/4.</div>
+        <div class="process-desc">Three angles iterated. Dead side. Dead front. Rear 3/4.</div>
       </div>
-      <div class="process-arrow reveal-item">→</div>
+      <div class="process-arrow reveal-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h14M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <div class="process-step reveal-item">
         <div class="process-num">03</div>
         <div class="process-name">Output</div>
-        <div class="process-desc">Studio-quality image, every time. White over steel.</div>
+        <div class="process-desc">Studio-quality image, every time.</div>
       </div>
     </div>
   </section>
@@ -181,16 +201,16 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-wordmark reveal-item">Base Model World</div>
-        <div class="footer-social reveal-item">
+      <div class="footer-top reveal-item">
+        <div class="footer-wordmark">White Over Steel</div>
+        <div class="footer-social">
           <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
           <span class="footer-dot"></span>
           <a href="https://github.com/nortontheclaw-svg/base-model-world" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer-bottom reveal-item">
-        <p class="footer-copy">&copy; 2026 Base Model World. Photography and art direction.</p>
+        <p class="footer-copy">&copy; 2026 White Over Steel</p>
         <p class="footer-tagline">White over steel.</p>
       </div>
     </div>

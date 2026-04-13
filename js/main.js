@@ -1,12 +1,11 @@
 /* ============================================================
-   BASE MODEL WORLD — main.js
+   WHITE OVER STEEL — main.js
    - Scroll-triggered reveal animations
    - Lightbox with prev/next navigation
-   - Hero image load animation
-   - Smooth scroll
+   - Hero image Ken Burns load animation
+   - Keyboard accessible (Escape, Arrow keys)
    ============================================================ */
 
-// ---- CAR DATA ----
 const carData = {
   ferrari: {
     name: 'Ferrari 360 Modena',
@@ -52,7 +51,6 @@ const carData = {
 // ---- SCROLL REVEAL ----
 function initReveal() {
   const items = document.querySelectorAll('.reveal-item');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -60,10 +58,7 @@ function initReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   items.forEach(item => observer.observe(item));
 }
@@ -72,7 +67,6 @@ function initReveal() {
 function initHero() {
   const heroImg = document.getElementById('hero-img');
   if (!heroImg) return;
-
   if (heroImg.complete) {
     heroImg.classList.add('loaded');
   } else {
@@ -85,7 +79,7 @@ let currentCar = null;
 let currentIndex = 0;
 
 const lightbox = document.getElementById('lightbox');
-const lbHero = document.getElementById('lb-hero');
+const lbHero  = document.getElementById('lb-hero');
 const lbTitle = document.getElementById('lb-title');
 const lbThumbs = document.getElementById('lb-thumbs');
 const lbCaption = document.getElementById('lb-caption');
@@ -103,15 +97,12 @@ function closeLightbox() {
   lightbox.classList.remove('active');
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  setTimeout(() => {
-    lbHero.src = '';
-    lbThumbs.innerHTML = '';
-  }, 400);
+  setTimeout(() => { lbHero.src = ''; lbThumbs.innerHTML = ''; }, 400);
 }
 
 function renderLightbox() {
-  lbHero.src = currentCar.images[currentIndex];
-  lbHero.alt = currentCar.name;
+  lbHero.src    = currentCar.images[currentIndex];
+  lbHero.alt    = currentCar.name;
   lbTitle.textContent = currentCar.name;
   lbCaption.textContent = currentCar.caption;
 
@@ -128,7 +119,6 @@ function renderLightbox() {
     lbThumbs.appendChild(img);
   });
 
-  // Scroll active thumb into view
   const active = lbThumbs.querySelector('.active');
   if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
@@ -152,16 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.car-card').forEach(card => {
     const carKey = card.dataset.car;
     if (!carData[carKey]) return;
-
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
-
     card.addEventListener('click', () => openLightbox(carKey, 0));
     card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(carKey, 0);
-      }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(carKey, 0); }
     });
   });
 
@@ -169,10 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.lb-close').addEventListener('click', closeLightbox);
   document.querySelector('.lb-next').addEventListener('click', lbNext);
   document.querySelector('.lb-prev').addEventListener('click', lbPrev);
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
@@ -180,21 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') lbNext();
     if (e.key === 'ArrowLeft')  lbPrev();
   });
-
-  // Nav active link — highlight based on scroll position
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.toggle('active',
-            link.getAttribute('href') === `#${entry.target.id}`);
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-
-  sections.forEach(section => navObserver.observe(section));
 });
