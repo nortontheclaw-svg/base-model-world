@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Model World</title>
+  <meta name="description" content="White over steel. AI-assisted automotive photography.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Base Model World</span>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="img/mclaren-p1-hero.png" alt="McLaren P1" loading="eager">
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="hero-title">Base Model World</h1>
+        <p class="hero-tagline">White over steel.<br>No distraction. No compromise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+    </div>
+
+    <div class="car-grid">
+
+      <!-- McLaren P1 -->
+      <div class="car-card" data-car="mclaren">
+        <div class="car-card-image">
+          <img src="img/mclaren-p1-hero.png" alt="McLaren P1" loading="lazy">
+        </div>
+        <div class="car-card-info">
+          <h3 class="car-name">McLaren P1</h3>
+          <p class="car-sub">Hybrid Hypercar</p>
+        </div>
+      </div>
+
+      <!-- Ferrari 360 -->
+      <div class="car-card" data-car="ferrari">
+        <div class="car-card-image">
+          <img src="img/ferrari-360-front.png" alt="Ferrari 360 Modena" loading="lazy">
+        </div>
+        <div class="car-card-info">
+          <h3 class="car-name">Ferrari 360 Modena</h3>
+          <p class="car-sub">3.6 V8 · Manual</p>
+        </div>
+      </div>
+
+      <!-- Porsche 911 -->
+      <div class="car-card" data-car="porsche">
+        <div class="car-card-image">
+          <img src="img/porsche-911-hero.png" alt="Porsche 911 Carrera" loading="lazy">
+        </div>
+        <div class="car-card-info">
+          <h3 class="car-name">Porsche 911 Carrera</h3>
+          <p class="car-sub">Carrera. Nothing else.</p>
+        </div>
+      </div>
+
+      <!-- Bentley -->
+      <div class="car-card" data-car="bentley">
+        <div class="car-card-image">
+          <img src="img/bentley-flying-spur-hero.png" alt="Bentley Flying Spur" loading="lazy">
+        </div>
+        <div class="car-card-info">
+          <h3 class="car-name">Bentley Flying Spur</h3>
+          <p class="car-sub">Restraint as ambition</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="section-header">
+        <span class="section-label">About</span>
+      </div>
+      <div class="about-text">
+        <p>Base Model World is a car photography project built around a simple conviction: the best way to see a car is without distraction.</p>
+        <p>Each image begins as a 3/4-front hero shot generated with AI, then developed into three angles — dead side, dead front, rear 3/4 — using Figma Weave. The result is a consistent studio look: white infinity cove, pressed steel wheels, black bumper sections. No location. No filter. No alloy.</p>
+        <p class="about-last">The aesthetic is deliberate. White over steel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Base Model World</span>
+      <div class="footer-links">
+        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">@base.model.world</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Base Model World. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-hero">
+        <img id="lb-hero" src="" alt="">
+      </div>
+      <div class="lightbox-thumbs" id="lb-thumbs"></div>
+      <div class="lightbox-caption" id="lb-caption"></div>
+    </div>
+    <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
+    <button class="lightbox-next" aria-label="Next">&#10095;</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
