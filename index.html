@@ -7,242 +7,170 @@
   <meta name="description" content="White over steel. AI-assisted automotive photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav id="nav">
+  <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
-      <a href="#" class="nav-wordmark">White Over Steel</a>
-      <div class="nav-right">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener" class="nav-link nav-ig">@base.model.world</a>
+      <a class="wordmark" href="#top" aria-label="White Over Steel home">White Over Steel</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">@base.model.world</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="img/mclaren-p1-hero.png" alt="McLaren P1" id="hero-img">
-    </div>
-    <div class="hero-vignette"></div>
-    <div class="hero-content">
-      <div class="hero-label reveal-item">Photography</div>
-      <h1 class="hero-title">
-        <span class="hero-title-line reveal-item">White</span>
-        <span class="hero-title-line reveal-item">Over</span>
-        <span class="hero-title-line reveal-item hero-title-bold">Steel.</span>
-      </h1>
-      <p class="hero-sub reveal-item">AI-assisted automotive photography.<br>No filter. No location. No alloy.</p>
-    </div>
-    <div class="hero-scroll-hint reveal-item">
-      <div class="scroll-dot"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <!-- WORK INTRO -->
-  <section class="work-intro" id="work">
-    <div class="work-intro-inner">
-      <div class="section-label reveal-item">Selected Work</div>
-      <h2 class="work-intro-heading reveal-item">The cars.<br>Nothing else.</h2>
-    </div>
-  </section>
-
-  <!-- CAR GRID -->
-  <section class="car-section">
-    <div class="car-grid">
-
-      <!-- Ferrari — large left -->
-      <div class="car-card car-card--large reveal-item" data-car="ferrari">
-        <div class="car-card-media">
-          <img src="img/ferrari-360-front.png" alt="Ferrari 360 Modena" loading="lazy">
-          <div class="car-card-overlay">
-            <span class="car-card-overlay-text">View</span>
-          </div>
-        </div>
-        <div class="car-card-body">
-          <div class="car-card-index">01</div>
-          <div class="car-card-info">
-            <div class="car-card-name">Ferrari 360 Modena</div>
-            <div class="car-card-spec">3.6 V8 · Manual</div>
-          </div>
-          <div class="car-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+  <main id="top">
+    <section class="hero" aria-label="White Over Steel">
+      <img class="hero-image" id="heroImage" src="img/mclaren-p1-hero.png" alt="McLaren P1 in a white studio">
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" aria-label="White Over Steel">
+          <span class="reveal-item">White</span>
+          <span class="reveal-item">Over</span>
+          <span class="reveal-item">Steel</span>
+        </h1>
+        <p class="hero-tagline reveal-item">White over steel.</p>
       </div>
+      <a class="scroll-hint reveal-item" href="#work" aria-label="Scroll to work">
+        <span class="scroll-dot" aria-hidden="true"></span>
+        <span>Scroll</span>
+      </a>
+    </section>
 
-      <!-- Porsche -->
-      <div class="car-card reveal-item" data-car="porsche">
-        <div class="car-card-media">
-          <img src="img/porsche-911-hero.png" alt="Porsche 911 Carrera" loading="lazy">
-          <div class="car-card-overlay">
-            <span class="car-card-overlay-text">View</span>
-          </div>
-        </div>
-        <div class="car-card-body">
-          <div class="car-card-index">02</div>
-          <div class="car-card-info">
-            <div class="car-card-name">Porsche 911 Carrera</div>
-            <div class="car-card-spec">Carrera. Nothing else.</div>
-          </div>
-          <div class="car-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+    <section class="work-intro" id="work">
+      <div class="section-inner">
+        <p class="section-label reveal-item">Selected Work</p>
+        <h2 class="section-heading reveal-item">The Cars.</h2>
       </div>
+    </section>
 
-      <!-- McLaren -->
-      <div class="car-card reveal-item" data-car="mclaren">
-        <div class="car-card-media">
-          <img src="img/mclaren-p1-alt-1.png" alt="McLaren P1" loading="lazy">
-          <div class="car-card-overlay">
-            <span class="car-card-overlay-text">View</span>
-          </div>
+    <section class="work-grid" aria-label="Car photography portfolio">
+      <article class="car-card car-card-large reveal-item" data-car="ferrari" tabindex="0" role="button" aria-label="View Ferrari 360 Modena">
+        <div class="card-media">
+          <img src="img/ferrari-360-front.png" alt="Ferrari 360 Modena front view" loading="lazy">
+          <span class="view-badge">View</span>
         </div>
-        <div class="car-card-body">
-          <div class="car-card-index">03</div>
-          <div class="car-card-info">
-            <div class="car-card-name">McLaren P1</div>
-            <div class="car-card-spec">Hybrid Hypercar</div>
+        <div class="card-body">
+          <span class="card-index">01</span>
+          <div>
+            <h3>Ferrari 360 Modena</h3>
+            <p>3.6 V8. Manual box.</p>
           </div>
-          <div class="car-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+          <span class="card-arrow" aria-hidden="true">-&gt;</span>
         </div>
-      </div>
+      </article>
 
-      <!-- Bentley — full width -->
-      <div class="car-card car-card--wide reveal-item" data-car="bentley">
-        <div class="car-card-media">
-          <img src="img/bentley-flying-spur-hero.png" alt="Bentley Flying Spur" loading="lazy">
-          <div class="car-card-overlay">
-            <span class="car-card-overlay-text">View</span>
-          </div>
+      <article class="car-card reveal-item" data-car="porsche" tabindex="0" role="button" aria-label="View Porsche 911 Carrera">
+        <div class="card-media">
+          <img src="img/porsche-911-hero.png" alt="Porsche 911 Carrera in a white studio" loading="lazy">
+          <span class="view-badge">View</span>
         </div>
-        <div class="car-card-body">
-          <div class="car-card-index">04</div>
-          <div class="car-card-info">
-            <div class="car-card-name">Bentley Flying Spur</div>
-            <div class="car-card-spec">Restraint as ambition</div>
+        <div class="card-body">
+          <span class="card-index">02</span>
+          <div>
+            <h3>Porsche 911 Carrera</h3>
+            <p>Base Carrera. Steel wheels.</p>
           </div>
-          <div class="car-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <span class="card-arrow" aria-hidden="true">-&gt;</span>
+        </div>
+      </article>
+
+      <article class="car-card reveal-item" data-car="mclaren" tabindex="0" role="button" aria-label="View McLaren P1">
+        <div class="card-media">
+          <img src="img/mclaren-p1-hero.png" alt="McLaren P1 in a white studio" loading="lazy">
+          <span class="view-badge">View</span>
+        </div>
+        <div class="card-body">
+          <span class="card-index">03</span>
+          <div>
+            <h3>McLaren P1</h3>
+            <p>Shape over noise.</p>
           </div>
+          <span class="card-arrow" aria-hidden="true">-&gt;</span>
+        </div>
+      </article>
+
+      <article class="car-card car-card-wide reveal-item" data-car="bentley" tabindex="0" role="button" aria-label="View Bentley Flying Spur">
+        <div class="card-media">
+          <img src="img/bentley-flying-spur-hero.png" alt="Bentley Flying Spur in a white studio" loading="lazy">
+          <span class="view-badge">View</span>
+        </div>
+        <div class="card-body">
+          <span class="card-index">04</span>
+          <div>
+            <h3>Bentley Flying Spur</h3>
+            <p>Restraint as ambition.</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">-&gt;</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <aside class="about-label reveal-item">
+          <p class="section-label">About</p>
+          <span aria-hidden="true"></span>
+        </aside>
+        <div class="about-copy">
+          <blockquote class="about-lead reveal-item">Cars look better when the noise is stripped out.</blockquote>
+          <p class="reveal-item">White Over Steel is AI-assisted automotive photography built around base-model clarity: white studio space, black trim, pressed steel, and no warm gloss.</p>
+          <p class="reveal-item">Hero shots begin in Gemini, then angles are developed through Figma Weave until the set feels consistent: front, side, rear, and the one image that makes the car hold still.</p>
+          <p class="reveal-item">No showroom theatre. No luxury shorthand. White over steel.</p>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-inner">
-      <div class="about-left reveal-item">
-        <div class="section-label">About</div>
-        <div class="about-rule"></div>
-      </div>
-      <div class="about-right">
-        <p class="about-lead reveal-item">White Over Steel is a car photography project built around one idea: <strong>the best way to see a car is without distraction.</strong></p>
-        <div class="about-divider reveal-item"></div>
-        <div class="about-body">
-          <p class="reveal-item">Each image begins as a 3/4-front hero shot generated with AI, then developed into three angles — dead side, dead front, rear 3/4 — using Figma Weave.</p>
-          <p class="reveal-item">The result is a consistent studio look: white infinity cove, pressed steel wheels, black bumper sections. No location. No filter. No alloy.</p>
-          <p class="about-last reveal-item">The aesthetic is deliberate. <strong>White over steel.</strong></p>
+    <section class="process" aria-label="Process">
+      <div class="process-inner">
+        <div class="process-step reveal-item">
+          <span>01</span>
+          <h2>Gemini</h2>
+          <p>Hero shot. Studio light. Base-model stance.</p>
+        </div>
+        <div class="process-step reveal-item">
+          <span>02</span>
+          <h2>Figma Weave</h2>
+          <p>Angles pushed until the set locks together.</p>
+        </div>
+        <div class="process-step reveal-item">
+          <span>03</span>
+          <h2>Output</h2>
+          <p>Four images. One car. No decoration.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- PROCESS -->
-  <section class="process">
-    <div class="process-inner">
-      <div class="process-step reveal-item">
-        <div class="process-num">01</div>
-        <div class="process-name">Gemini</div>
-        <div class="process-desc">3/4-front hero shot. Black bumpers. Steel wheels.</div>
-      </div>
-      <div class="process-arrow reveal-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M5 12h14M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="process-step reveal-item">
-        <div class="process-num">02</div>
-        <div class="process-name">Figma Weave</div>
-        <div class="process-desc">Three angles iterated. Dead side. Dead front. Rear 3/4.</div>
-      </div>
-      <div class="process-arrow reveal-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M5 12h14M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="process-step reveal-item">
-        <div class="process-num">03</div>
-        <div class="process-name">Output</div>
-        <div class="process-desc">Studio-quality image, every time.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-top reveal-item">
-        <div class="footer-wordmark">White Over Steel</div>
-        <div class="footer-social">
-          <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
-          <span class="footer-dot"></span>
-          <a href="https://github.com/nortontheclaw-svg/base-model-world" target="_blank" rel="noopener">GitHub</a>
-        </div>
+      <a class="footer-wordmark" href="#top">White Over Steel</a>
+      <div class="footer-links">
+        <a href="https://instagram.com/base.model.world" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://github.com/nortontheclaw-svg/base-model-world" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <div class="footer-bottom reveal-item">
-        <p class="footer-copy">&copy; 2026 White Over Steel</p>
-        <p class="footer-tagline">White over steel.</p>
-      </div>
+      <p>&copy; 2026 White Over Steel</p>
+      <p>White over steel.</p>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="Close">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-    </button>
-    <div class="lb-content">
-      <div class="lb-hero">
-        <img id="lb-hero" src="" alt="">
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <button class="lightbox-close glass-button" type="button" aria-label="Close lightbox">Close</button>
+    <button class="lightbox-nav lightbox-prev glass-button" type="button" aria-label="Previous image">Prev</button>
+    <div class="lightbox-panel" role="document">
+      <div class="lightbox-image-wrap">
+        <img id="lightboxImage" src="" alt="">
       </div>
-      <div class="lb-meta">
-        <div class="lb-title" id="lb-title"></div>
-        <div class="lb-thumbs" id="lb-thumbs"></div>
-        <div class="lb-caption" id="lb-caption"></div>
-      </div>
+      <aside class="lightbox-meta">
+        <h2 id="lightboxTitle"></h2>
+        <div class="lightbox-thumbs" id="lightboxThumbs" aria-label="Image thumbnails"></div>
+        <p id="lightboxCaption"></p>
+      </aside>
     </div>
-    <button class="lb-nav lb-prev" aria-label="Previous">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <button class="lb-nav lb-next" aria-label="Next">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
+    <button class="lightbox-nav lightbox-next glass-button" type="button" aria-label="Next image">Next</button>
   </div>
 
   <script src="js/main.js"></script>
